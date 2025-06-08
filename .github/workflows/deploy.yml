@@ -4,7 +4,7 @@ on:
   push:
     branches: [ react-deploy ]
 
-# 권한 설정 추가
+# 권한 설정
 permissions:
   contents: read
   pages: write
@@ -23,18 +23,43 @@ jobs:
         node-version: '18'
         cache: 'npm'
     
-    - name: Install and Build
+    - name: Install Dependencies
+      run: npm ci
+    
+    # 🆕 React 앱과 Storybook 모두 빌드
+    - name: Build React App
+      run: npm run build
+    
+    - name: Build Storybook
+      run: npm run build-storybook
+    
+    # 🆕 통합 배포 디렉토리 준비
+    - name: Prepare Deploy Directory
       run: |
-        npm ci
-        npm run build
+        # 배포용 디렉토리 생성
+        mkdir -p deploy-ready
+        
+        # React 앱을 루트에 복사
+        cp -r dist/* deploy-ready/
+        
+        # Storybook을 /storybook 서브디렉토리에 복사
+        mkdir -p deploy-ready/storybook
+        cp -r storybook-static/* deploy-ready/storybook/
+        
+        # 🎯 결과 확인
+        echo "📁 Deploy directory structure:"
+        ls -la deploy-ready/
+        echo "📚 Storybook files:"
+        ls -la deploy-ready/storybook/ | head -5
     
     - name: Setup Pages
       uses: actions/configure-pages@v4
     
+    # 🔄 통합된 디렉토리로 업로드
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
-        path: './dist'
+        path: './deploy-ready'  # 🆕 dist 대신 deploy-ready 사용
     
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v4
