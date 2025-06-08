@@ -21,8 +21,8 @@ export const PowerTile = ({
   // 아이콘 선택 (실제 프로젝트에서는 아이콘 라이브러리 사용)
   const getIcon = () => {
     switch (status) {
-      case 'stable': return '🔌';
-      case 'success': return '⚡';
+      case 'stable': return '⚡';
+      case 'success': return '💡';
       case 'warning': return '⚠️';
       case 'danger': return '🔥';
       default: return '⚡';

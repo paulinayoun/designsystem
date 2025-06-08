@@ -17,5 +17,13 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  // 🆕 GitHub Pages 서브 디렉토리 지원
+  viteFinal: async (config) => {
+    // 프로덕션 빌드시에만 base path 설정
+    if (process.env.NODE_ENV === 'production') {
+      config.base = '/designsystem/storybook/';
+    }
+    return config;
+  },
 };
 export default config;
