@@ -1,0 +1,75 @@
+/**
+ * 디자인 토큰
+ * 수정할 때는 이 파일만 건드리면 전체 앱에 반영됨
+ */
+
+:root {
+  /* === 색상 시스템 === */
+  /* Primary - 메인 브랜딩 */
+  --color-primary: #0d6efd;
+  --color-primary-light: #6ea8fe;
+  --color-primary-dark: #0a58ca;
+  
+  /* Semantic - 상태 표시 */
+  --color-success: #198754;  /* 정상 */
+  --color-warning: #ffc107;  /* 주의 */
+  --color-danger: #dc3545;   /* 위험 */
+  
+  /* Neutral - 기본 텍스트 */
+  --color-gray-50: #f8f9fa;
+  --color-gray-100: #e9ecef;
+  --color-gray-500: #6c757d;
+  --color-gray-900: #212529;
+  
+  /* === 간격 시스템 (8px 기준) === */
+  --space-1: 4px;   /* 0.25rem */
+  --space-2: 8px;   /* 0.5rem */
+  --space-3: 12px;  /* 0.75rem */
+  --space-4: 16px;  /* 1rem */
+  --space-5: 20px;  /* 1.25rem */
+  --space-6: 24px;  /* 1.5rem */
+  --space-8: 32px;  /* 2rem */
+  
+  /* === 타이포그래피 === */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.125rem;  /* 18px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 2rem;     /* 32px */
+  --font-size-3xl: 2.5rem;   /* 40px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* === 그림자 === */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* === 보더 === */
+  --border-radius-sm: 4px;
+  --border-radius-base: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  
+  --border-width: 1px;
+  --border-color: var(--color-gray-100);
+  
+  /* === 트랜지션 === */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-base: 0.2s ease-in-out;
+  --transition-slow: 0.3s ease-in-out;
+}
+
+/* 다크모드 대응 (나중에 추가할 때) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-50: #1a1a1a;
+    --color-gray-100: #2d2d2d;
+    --color-gray-500: #999999;
+    --color-gray-900: #ffffff;
+  }
+}

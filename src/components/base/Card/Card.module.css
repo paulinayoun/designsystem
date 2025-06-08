@@ -1,0 +1,53 @@
+.card {
+  background-color: white;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+/* 패딩 변형 */
+.small { padding: var(--space-3); }
+.medium { padding: var(--space-4); }
+.large { padding: var(--space-6); }
+
+/* 색상 변형 */
+.primary {
+  border-color: var(--color-primary);
+  background-color: rgba(13, 110, 253, 0.02);
+}
+
+.success {
+  border-color: var(--color-success);
+  background-color: rgba(25, 135, 84, 0.02);
+}
+
+.warning {
+  border-color: var(--color-warning);
+  background-color: rgba(255, 193, 7, 0.02);
+}
+
+.danger {
+  border-color: var(--color-danger);
+  background-color: rgba(220, 53, 69, 0.02);
+}
+
+/* 인터랙션 */
+.hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.clickable:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
