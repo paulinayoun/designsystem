@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <h1>전력량</h1>
+      <h1>전력량 대시보드</h1>
       
       <PowerTile 
         title="현재 전력량"

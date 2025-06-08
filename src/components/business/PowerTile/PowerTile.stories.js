@@ -62,3 +62,10 @@ export const Loading = {
     loading: true
   }
 };
+
+export const EdgeCase = {
+  args: {
+    value: 9999.99,  // 거의 10000에 가까운 값
+    title: "경계값 테스트"
+  }
+};

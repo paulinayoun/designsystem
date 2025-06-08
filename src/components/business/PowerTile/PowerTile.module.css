@@ -2,7 +2,7 @@
 
 .powerTile {
   min-height: 180px;
-  max-width: 240px;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
 }
