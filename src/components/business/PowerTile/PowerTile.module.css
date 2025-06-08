@@ -1,5 +1,8 @@
+@import '../../../styles/variables.css';
+
 .powerTile {
   min-height: 180px;
+  max-width: 240px;
   display: flex;
   flex-direction: column;
 }

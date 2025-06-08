@@ -1,33 +1,27 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import PowerTile from './components/business/PowerTile/PowerTile'
+import './styles/variables.css'
+import './index.css'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [powerValue, setPowerValue] = useState(8765.43)
 
   return (
     <>
+      <h1>전력량</h1>
+      
+      <PowerTile 
+        title="현재 전력량"
+        value={powerValue}
+        subtitle="실시간 사용량"
+      />
+      <br />
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <button onClick={() => setPowerValue(1234)}>작은 값</button>
+        <button onClick={() => setPowerValue(125000)}>큰 값</button>
+        <button onClick={() => setPowerValue(75000)}>경고 값</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

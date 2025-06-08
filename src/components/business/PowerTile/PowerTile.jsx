@@ -53,7 +53,9 @@ export const PowerTile = ({
       className={`${styles.powerTile} ${className}`}
     >
       {/* 헤더 */}
-      <div className={styles.header}>
+      <div 
+        padding="large"
+        className={styles.header}>
         <h3 className={styles.title}>{title}</h3>
         {showIcon && (
           <span className={styles.icon} role="img" aria-label={`${status} 상태`}>
@@ -64,6 +66,10 @@ export const PowerTile = ({
 
       {/* 메인 값 */}
       <div className={styles.main}>
+        {subtitle && (
+          <p className={styles.subtitle}>{subtitle}</p>
+        )}
+
         <div className={styles.valueContainer}>
           <span className={styles.value}>
             {powerData.displayValue}
@@ -72,10 +78,6 @@ export const PowerTile = ({
             {powerData.unit}
           </span>
         </div>
-        
-        {subtitle && (
-          <p className={styles.subtitle}>{subtitle}</p>
-        )}
       </div>
 
       {/* 상태 표시 */}
