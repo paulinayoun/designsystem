@@ -3,9 +3,9 @@ name: 🚀 Deploy to GitHub Pages
 # 언제 실행할지 정의
 on:
   push:
-    branches: [ main ]  # main 브랜치에 푸시할 때
+    branches: [ react-deploy ]  # react-deploy 브랜치에 푸시할 때
   pull_request:
-    branches: [ main ]  # main으로 PR 생성할 때
+    branches: [ react-deploy ]  # react-deploy 으로 PR 생성할 때 보통은 main 브랜치로 PR을 생성하지만, 예제에서는 react-deploy 사용
 
 # 실행할 작업들
 jobs:
