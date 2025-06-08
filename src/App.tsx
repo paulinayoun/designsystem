@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PowerTile from './components/business/PowerTile/PowerTile'
 import './styles/variables.css'
 import './index.css'
@@ -6,6 +6,18 @@ import './App.css'
 
 function App() {
   const [powerValue, setPowerValue] = useState(8765.43)
+
+  // 🎯 실시간 랜덤 값 생성 (1초마다)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // -1000 ~ 9999999 범위에서 랜덤 값 생성
+      const randomValue = Math.floor(Math.random() * 10099) - 1000;
+      setPowerValue(randomValue);
+    }, 1000);
+
+    // 🧹 컴포넌트 언마운트시 클리어
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -18,9 +30,10 @@ function App() {
       />
       <br />
       <div>
-        <button onClick={() => setPowerValue(1234)}>작은 값</button>
-        <button onClick={() => setPowerValue(125000)}>큰 값</button>
-        <button onClick={() => setPowerValue(75000)}>경고 값</button>
+        <button onClick={() => setPowerValue(123)}>정상 값</button>
+        <button onClick={() => setPowerValue(18340)}>관심 값</button>
+        <button onClick={() => setPowerValue(75000)}>주의 값</button>
+        <button onClick={() => setPowerValue(125000)}>위험 값</button>
       </div>
     </>
   )
