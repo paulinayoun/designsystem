@@ -73,6 +73,23 @@ export const Loading = {
   }
 };
 
+// 🆕 데이터 이상 케이스
+export const NegativeValue = {
+  args: {
+    title: "음수 처리",
+    value: -1500,
+    subtitle: "태양광 발전으로 인한 역전송"
+  }
+};
+
+export const NullValue = {
+  args: {
+    title: "데이터 없음",
+    value: null,
+    subtitle: "센서 연결 끊김"
+  }
+};
+
 export const EdgeCase = {
   args: {
     value: 9999.99,  // 거의 10000에 가까운 값
