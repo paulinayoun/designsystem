@@ -63,6 +63,12 @@
   color: white;
 }
 
+.stable {
+  background-color: var(--color-stable);
+  color: white;
+  border-color: var(--color-stable);
+}
+
 .success {
   background-color: var(--color-success);
   color: white;

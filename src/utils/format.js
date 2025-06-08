@@ -56,11 +56,12 @@ export const formatPowerDisplay = (value) => {
  * 나중에 비즈니스 로직이 복잡해지면 여기서 처리
  */
 export const getPowerStatus = (value, thresholds = {}) => {
-  const { warning = 50000, danger = 100000 } = thresholds;
+  const { success = 1000, warning = 10000, danger = 100000 } = thresholds;
   
   if (value >= danger) return 'danger';
   if (value >= warning) return 'warning';
-  return 'success';
+  if (value >= success) return 'success';
+  return 'stable';
 };
 
 /**

@@ -25,7 +25,7 @@ export default {
 export const Default = {
   args: {
     title: "현재 전력량",
-    value: 8765.43,
+    value: 93.43,
     subtitle: "실시간 사용량"
   }
 };
@@ -38,12 +38,22 @@ export const AutoConvertToMWh = {
   }
 };
 
+export const SuccessState = {
+  args: {
+    title: "집중 수요 전력량",
+    value: 1000,
+    subtitle: "관심 수준에 도달",
+    thresholds: { success:1000, warning: 10000, danger: 100000 }
+  }
+};
+
+
 export const WarningState = {
   args: {
     title: "피크 전력량",
     value: 75000,
     subtitle: "주의 수준에 도달",
-    thresholds: { warning: 50000, danger: 100000 }
+    thresholds: { success:1000, warning: 10000, danger: 100000 }
   }
 };
 
@@ -52,7 +62,7 @@ export const DangerState = {
     title: "비상 전력량",
     value: 150000,
     subtitle: "즉시 조치 필요",
-    thresholds: { warning: 50000, danger: 100000 }
+    thresholds: { success:1000, warning: 50000, danger: 100000 }
   }
 };
 

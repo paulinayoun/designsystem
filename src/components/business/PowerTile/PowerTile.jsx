@@ -21,6 +21,7 @@ export const PowerTile = ({
   // 아이콘 선택 (실제 프로젝트에서는 아이콘 라이브러리 사용)
   const getIcon = () => {
     switch (status) {
+      case 'stable': return '🔌';
       case 'success': return '⚡';
       case 'warning': return '⚠️';
       case 'danger': return '🔥';
@@ -84,7 +85,8 @@ export const PowerTile = ({
       {showStatus && (
         <div className={styles.footer}>
           <span className={`${styles.statusBadge} ${styles[status]}`}>
-            {status === 'success' && '정상'}
+            {status === 'stable' && '정상'}
+            {status === 'success' && '관심'}
             {status === 'warning' && '주의'}
             {status === 'danger' && '위험'}
           </span>
