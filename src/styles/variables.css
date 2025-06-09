@@ -11,8 +11,8 @@
   --color-primary-dark: #0a58ca;
   
   /* Semantic - 상태 표시 */
-  --color-stable: #117bde; /* 정상 */
-  --color-success: #198754;  /* 관심 */
+
+  --color-success: #198754;  /* 정상 */
   --color-warning: #ffc107;  /* 주의 */
   --color-danger: #dc3545;   /* 위험 */
   

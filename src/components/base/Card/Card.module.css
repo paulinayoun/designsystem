@@ -19,10 +19,6 @@
   background-color: rgba(13, 110, 253, 0.02);
 }
 
-.stable {
-  border-color: var(--color-stable);
-  background-color: rgba(17, 123, 237, 0.02);
-}
 .success {
   border-color: var(--color-success);
   background-color: rgba(25, 135, 84, 0.02);

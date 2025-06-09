@@ -30,8 +30,7 @@ function App() {
       />
       <br />
       <div>
-        <button onClick={() => setPowerValue(123)}>정상 값</button>
-        <button onClick={() => setPowerValue(18340)}>관심 값</button>
+        <button onClick={() => setPowerValue(18340)}>정상 값</button>
         <button onClick={() => setPowerValue(75000)}>주의 값</button>
         <button onClick={() => setPowerValue(125000)}>위험 값</button>
       </div>

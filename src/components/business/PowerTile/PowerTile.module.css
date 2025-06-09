@@ -78,11 +78,6 @@
   text-align: center;
 }
 
-.statusBadge.stable {
-  background-color: rgba(17, 123, 237, 0.1);
-  color: var(--color-stable);
-}
-
 .statusBadge.success {
   background-color: rgba(25, 135, 84, 0.1);
   color: var(--color-success);

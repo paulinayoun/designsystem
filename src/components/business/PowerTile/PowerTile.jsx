@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../../base/Card';
-import { convertPowerUnit, getPowerStatus } from '../../../utils/format';
+import { getPowerStatus } from '../../../utils/format';
 import styles from './PowerTile.module.css';
 
 export const PowerTile = ({
@@ -15,13 +15,12 @@ export const PowerTile = ({
   className = ""
 }) => {
   // 전력량 데이터 변환
-  const powerData = convertPowerUnit(value);
+  const powerData = value
   const status = showStatus ? getPowerStatus(value, thresholds) : 'default';
   
   // 아이콘 선택 (실제 프로젝트에서는 아이콘 라이브러리 사용)
   const getIcon = () => {
     switch (status) {
-      case 'stable': return '⚡';
       case 'success': return '💡';
       case 'warning': return '⚠️';
       case 'danger': return '🔥';
@@ -73,25 +72,13 @@ export const PowerTile = ({
 
         <div className={styles.valueContainer}>
           <span className={styles.value}>
-            {powerData.displayValue}
+            {powerData}
           </span>
           <span className={styles.unit}>
-            {powerData.unit}
+            {powerData.unit || 'kWh'}
           </span>
         </div>
       </div>
-
-      {/* 상태 표시 */}
-      {showStatus && (
-        <div className={styles.footer}>
-          <span className={`${styles.statusBadge} ${styles[status]}`}>
-            {status === 'stable' && '정상'}
-            {status === 'success' && '관심'}
-            {status === 'warning' && '주의'}
-            {status === 'danger' && '위험'}
-          </span>
-        </div>
-      )}
     </Card>
   );
 };

@@ -35,12 +35,12 @@ export const convertPowerUnit = (value) => {
     };
   }
   
-  const mwhValue = value / 1000;
-  return {
-    value: mwhValue,
-    unit: 'MWh', 
-    displayValue: formatNumber(mwhValue)
-  };
+  // const mwhValue = value / 1000;
+  // return {
+  //   value: mwhValue,
+  //   unit: 'MWh', 
+  //   displayValue: formatNumber(mwhValue)
+  // };
 };
 
 /**
